@@ -1,19 +1,10 @@
 
 import os
+import easygui
 def main():
-    walk_directory(".")
+    filepath = easygui.fileopenbox()
 
-def walk_directory(root_dir):
-    names = []
-    for _, _, files in os.walk(root_dir):
-        for file in files:
-            if filterFiles(file):
-                name = getAlterName(file)
-                if name not in names:
-                    names.append(name)
-                    os.mkdir(name)
-                os.rename(file, os.path.join(name, file))
-                         
+
 
         
 
